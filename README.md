@@ -6,7 +6,7 @@ This project demonstrates real-time **zero-shot object detection** using the [OW
 
 ## 🧠 Overview
 
-**ZeroShot-CustomVision** is designed to:
+**DynamicZeroShotVision** is designed to:
 
 - Accept input from a webcam or a local video file.
 - Use custom object categories (e.g., lightbulb, matchstick, monitor, lion, gaming console) that are not part of the COCO dataset.
