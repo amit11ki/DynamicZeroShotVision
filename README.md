@@ -34,8 +34,8 @@ You can change these live by pressing `c` during detection.
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/owlvit-zero-shot-detection.git
-cd owlvit-zero-shot-detection
+git clone https://github.com/amit11ki/DynamicZeroShotVision.git
+cd DynamicZeroShotVision
 ```
 
 2. **Install dependencies**
