@@ -1,0 +1,317 @@
+[
+    {
+        "frame": 2,
+        "timestamp": 1744300557.6962385,
+        "detections": []
+    },
+    {
+        "frame": 100,
+        "timestamp": 1744300560.7944388,
+        "detections": []
+    },
+    {
+        "frame": 192,
+        "timestamp": 1744300562.9159727,
+        "detections": []
+    },
+    {
+        "frame": 256,
+        "timestamp": 1744300564.690673,
+        "detections": []
+    },
+    {
+        "frame": 310,
+        "timestamp": 1744300566.386743,
+        "detections": []
+    },
+    {
+        "frame": 360,
+        "timestamp": 1744300567.9596198,
+        "detections": []
+    },
+    {
+        "frame": 406,
+        "timestamp": 1744300569.6561694,
+        "detections": []
+    },
+    {
+        "frame": 458,
+        "timestamp": 1744300571.2394314,
+        "detections": []
+    },
+    {
+        "frame": 506,
+        "timestamp": 1744300572.8305976,
+        "detections": []
+    },
+    {
+        "frame": 554,
+        "timestamp": 1744300574.446885,
+        "detections": []
+    },
+    {
+        "frame": 602,
+        "timestamp": 1744300576.717173,
+        "detections": []
+    },
+    {
+        "frame": 670,
+        "timestamp": 1744300578.439005,
+        "detections": []
+    },
+    {
+        "frame": 722,
+        "timestamp": 1744300579.9681005,
+        "detections": []
+    },
+    {
+        "frame": 768,
+        "timestamp": 1744300581.4878528,
+        "detections": []
+    },
+    {
+        "frame": 812,
+        "timestamp": 1744300583.0462196,
+        "detections": []
+    },
+    {
+        "frame": 860,
+        "timestamp": 1744300584.5609667,
+        "detections": []
+    },
+    {
+        "frame": 906,
+        "timestamp": 1744300586.0543869,
+        "detections": []
+    },
+    {
+        "frame": 950,
+        "timestamp": 1744300587.6453218,
+        "detections": []
+    },
+    {
+        "frame": 998,
+        "timestamp": 1744300589.380088,
+        "detections": []
+    },
+    {
+        "frame": 1050,
+        "timestamp": 1744300591.0203006,
+        "detections": []
+    },
+    {
+        "frame": 1098,
+        "timestamp": 1744300592.604605,
+        "detections": []
+    },
+    {
+        "frame": 1146,
+        "timestamp": 1744300594.2676117,
+        "detections": []
+    },
+    {
+        "frame": 1196,
+        "timestamp": 1744300595.810386,
+        "detections": []
+    },
+    {
+        "frame": 1244,
+        "timestamp": 1744300597.3692365,
+        "detections": []
+    },
+    {
+        "frame": 1290,
+        "timestamp": 1744300598.8546185,
+        "detections": []
+    },
+    {
+        "frame": 1334,
+        "timestamp": 1744300600.4410214,
+        "detections": []
+    },
+    {
+        "frame": 1382,
+        "timestamp": 1744300601.9864874,
+        "detections": []
+    },
+    {
+        "frame": 1428,
+        "timestamp": 1744300603.5987537,
+        "detections": []
+    },
+    {
+        "frame": 1476,
+        "timestamp": 1744300605.2588954,
+        "detections": []
+    },
+    {
+        "frame": 1526,
+        "timestamp": 1744300606.8363452,
+        "detections": []
+    },
+    {
+        "frame": 1574,
+        "timestamp": 1744300608.4337792,
+        "detections": []
+    },
+    {
+        "frame": 1622,
+        "timestamp": 1744300610.024593,
+        "detections": []
+    },
+    {
+        "frame": 1670,
+        "timestamp": 1744300611.5902898,
+        "detections": []
+    },
+    {
+        "frame": 1716,
+        "timestamp": 1744300613.2477095,
+        "detections": []
+    },
+    {
+        "frame": 1766,
+        "timestamp": 1744300614.8736005,
+        "detections": []
+    },
+    {
+        "frame": 1814,
+        "timestamp": 1744300616.4495797,
+        "detections": []
+    },
+    {
+        "frame": 1862,
+        "timestamp": 1744300618.0886607,
+        "detections": []
+    },
+    {
+        "frame": 1912,
+        "timestamp": 1744300619.630341,
+        "detections": []
+    },
+    {
+        "frame": 1956,
+        "timestamp": 1744300621.2066236,
+        "detections": []
+    },
+    {
+        "frame": 2004,
+        "timestamp": 1744300622.7377858,
+        "detections": []
+    },
+    {
+        "frame": 2050,
+        "timestamp": 1744300624.3323488,
+        "detections": []
+    },
+    {
+        "frame": 2100,
+        "timestamp": 1744300625.9347527,
+        "detections": []
+    },
+    {
+        "frame": 2146,
+        "timestamp": 1744300627.49029,
+        "detections": []
+    },
+    {
+        "frame": 2192,
+        "timestamp": 1744300629.0727477,
+        "detections": []
+    },
+    {
+        "frame": 2240,
+        "timestamp": 1744300630.6093788,
+        "detections": []
+    },
+    {
+        "frame": 2288,
+        "timestamp": 1744300632.2097569,
+        "detections": []
+    },
+    {
+        "frame": 2336,
+        "timestamp": 1744300633.844514,
+        "detections": []
+    },
+    {
+        "frame": 2382,
+        "timestamp": 1744300635.4901466,
+        "detections": []
+    },
+    {
+        "frame": 2432,
+        "timestamp": 1744300637.0546315,
+        "detections": []
+    },
+    {
+        "frame": 2480,
+        "timestamp": 1744300638.652124,
+        "detections": []
+    },
+    {
+        "frame": 2528,
+        "timestamp": 1744300640.2546995,
+        "detections": []
+    },
+    {
+        "frame": 2576,
+        "timestamp": 1744300641.7650857,
+        "detections": []
+    },
+    {
+        "frame": 2620,
+        "timestamp": 1744300643.396779,
+        "detections": []
+    },
+    {
+        "frame": 2670,
+        "timestamp": 1744300644.9403543,
+        "detections": []
+    },
+    {
+        "frame": 2718,
+        "timestamp": 1744300646.5834177,
+        "detections": []
+    },
+    {
+        "frame": 2766,
+        "timestamp": 1744300648.735279,
+        "detections": []
+    },
+    {
+        "frame": 2816,
+        "timestamp": 1744300650.3589146,
+        "detections": []
+    },
+    {
+        "frame": 2864,
+        "timestamp": 1744300652.0815184,
+        "detections": []
+    },
+    {
+        "frame": 2916,
+        "timestamp": 1744300653.6996787,
+        "detections": []
+    },
+    {
+        "frame": 2964,
+        "timestamp": 1744300655.2388043,
+        "detections": []
+    },
+    {
+        "frame": 3010,
+        "timestamp": 1744300656.9056365,
+        "detections": []
+    },
+    {
+        "frame": 3060,
+        "timestamp": 1744300658.5008063,
+        "detections": []
+    },
+    {
+        "frame": 3110,
+        "timestamp": 1744300660.0325646,
+        "detections": []
+    }
+]
