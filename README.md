@@ -14,8 +14,6 @@ This project demonstrates real-time **zero-shot object detection** using the [OW
 - Display annotated video with bounding boxes, labels, and confidence scores.
 - Allow live updating of detection classes during runtime.
 - Log predictions for further analysis.
-- Video Recording: Save processed videos with detection overlays to file
-
 ---
 
 
@@ -53,8 +51,6 @@ pip install torch opencv-python transformers numpy pillow
 python main.py --source 0                      # Use webcam (default)
 python main.py --source path/to/video.mp4      # Use video file
 python main.py --no-jit                        # Disable TorchScript acceleration
-python main.py --save-video                    # Save processed video to output directory
-python main.py --output path/to/output.mp4     # Specify output video path
 ```
 
 ## ⌨️ Keyboard Controls
