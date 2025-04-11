@@ -6,22 +6,19 @@ import numpy as np
 import threading
 import queue
 import argparse  # For handling command-line arguments
-import os  # For file path operations
 from PIL import Image  # For image manipulation
 from transformers import OwlViTProcessor, OwlViTForObjectDetection  # Hugging Face Transformers for OWL-ViT
 from torch.jit import trace  # For model acceleration
-from datetime import datetime  # For timestamping output files
 
 # ----------- Configuration -----------
 RESIZE_WIDTH, RESIZE_HEIGHT = 320, 320  # Resize dimensions for frames
-CONFIDENCE_THRESHOLD = 0.04  # Minimum confidence for valid detection
+CONFIDENCE_THRESHOLD = 0.3  # Minimum confidence for valid detection
 DEFAULT_CLASSES = ["lightbulb", "matchstick", "monitor", "lion", "gaming console"]
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"  # Use GPU if available
 LOG_FILE = "detections_log.json"
 WINDOW_NAME = "Zero-Shot Object Detection"
 PROCESS_EVERY_N = 2  # Process every Nth frame
 MAX_QUEUE_SIZE = 10  # Max size for frame queue in threading
-OUTPUT_DIR = "output"  # Directory to save output files
 # -------------------------------------
 
 COCO_CLASSES = {
@@ -161,7 +158,7 @@ class ZeroShotDetector:
 
 class ThreadedVideoProcessor:
     """Handles video processing in separate threads."""
-    def __init__(self, detector, video_source=0, save_video=False, output_path=None):
+    def __init__(self, detector, video_source=0):
         """Initialize with detector and video source."""
         self.detector = detector
         self.video_source = video_source
@@ -170,9 +167,6 @@ class ThreadedVideoProcessor:
         self.cap = None
         self.is_running = False
         self.threads = []
-        self.save_video = save_video
-        self.output_path = output_path
-        self.video_writer = None
 
     def start(self):
         """Start the video processing threads."""
@@ -187,23 +181,6 @@ class ThreadedVideoProcessor:
         self.fps = self.cap.get(cv2.CAP_PROP_FPS)
 
         print(f"[INFO] Video source: {self.video_source} ({self.frame_width}x{self.frame_height} @ {self.fps:.2f}fps)")
-
-        # Initialize video writer if needed
-        if self.save_video:
-            if not os.path.exists(OUTPUT_DIR):
-                os.makedirs(OUTPUT_DIR)
-                
-            if self.output_path is None:
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                self.output_path = os.path.join(OUTPUT_DIR, f"detection_{timestamp}.mp4")
-            
-            # Define the codec and create VideoWriter object
-            fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-            self.video_writer = cv2.VideoWriter(
-                self.output_path, fourcc, self.fps if self.fps > 0 else 30.0, 
-                (self.frame_width, self.frame_height)
-            )
-            print(f"[INFO] Saving video to: {self.output_path}")
 
         self.threads.append(threading.Thread(target=self._capture_thread))
         self.threads.append(threading.Thread(target=self._detection_thread))
@@ -260,9 +237,6 @@ class ThreadedVideoProcessor:
                 thread.join(timeout=1.0)
         if self.cap is not None:
             self.cap.release()
-        if self.video_writer is not None:
-            self.video_writer.release()
-            print(f"[INFO] Video saved to {self.output_path}")
         print("[INFO] Video processing stopped")
 
 
@@ -278,10 +252,10 @@ def create_ui(frame, fps, inf_time):
     return frame
 
 
-def run_detection(video_source=0, use_jit=True, save_video=False, output_path=None):
+def run_detection(video_source=0, use_jit=True):
     """Main function to run the detection pipeline."""
     detector = ZeroShotDetector(use_jit=use_jit)
-    processor = ThreadedVideoProcessor(detector, video_source, save_video, output_path)
+    processor = ThreadedVideoProcessor(detector, video_source)
     if not processor.start():
         return
 
@@ -307,13 +281,8 @@ def run_detection(video_source=0, use_jit=True, save_video=False, output_path=No
                     fps_counter = 0
                     fps_start_time = current_time
 
-                frame_with_ui = create_ui(frame.copy(), current_fps, avg_inf_time)
-                
-                # Write frame to video if enabled
-                if processor.save_video and processor.video_writer is not None:
-                    processor.video_writer.write(frame_with_ui)
-                
-                cv2.imshow(WINDOW_NAME, frame_with_ui)
+                frame = create_ui(frame, current_fps, avg_inf_time)
+                cv2.imshow(WINDOW_NAME, frame)
                 key = cv2.waitKey(1) & 0xFF
                 if key == ord('q'):
                     break
@@ -339,8 +308,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Zero-Shot Object Detection")
     parser.add_argument("--source", type=str, default="0", help="Video source (0 for webcam, or path to video file)")
     parser.add_argument("--no-jit", action="store_true", help="Disable TorchScript acceleration")
-    parser.add_argument("--save-video", action="store_true", help="Save processed video to output directory")
-    parser.add_argument("--output", type=str, default=None, help="Path to save output video (default: output/detection_timestamp.mp4)")
     args = parser.parse_args()
 
     try:
@@ -348,5 +315,4 @@ if __name__ == "__main__":
     except ValueError:
         video_source = args.source
 
-    run_detection(video_source=video_source, use_jit=not args.no_jit, 
-                  save_video=args.save_video, output_path=args.output)
+    run_detection(video_source=video_source, use_jit=not args.no_jit)
