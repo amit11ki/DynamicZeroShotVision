@@ -105,7 +105,7 @@ Each entry includes the frame number, timestamp, and detected objects.
 
 - Performance may vary based on GPU/CPU.
 - Resize dimensions for detection: **320x320**.
-- Supports both COCO and custom classes.
+- Supports only custom classes.
 
 ---
 
