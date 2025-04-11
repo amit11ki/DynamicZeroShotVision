@@ -49,9 +49,11 @@ pip install torch opencv-python transformers numpy pillow
 
 ### Command Line Arguments
 ```bash
-python main.py --source 0  # Use webcam (default)
-python main.py --source path/to/video.mp4  # Use video file
-python main.py --no-jit  # Disable TorchScript acceleration
+python main.py --source 0                      # Use webcam (default)
+python main.py --source path/to/video.mp4      # Use video file
+python main.py --no-jit                        # Disable TorchScript acceleration
+python main.py --save-video                    # Save processed video to output directory
+python main.py --output path/to/output.mp4     # Specify output video path
 ```
 
 ## ⌨️ Keyboard Controls
