@@ -47,22 +47,12 @@ pip install torch opencv-python transformers numpy pillow
 
 ## ▶️ Usage
 
-### Webcam
+### Command Line Arguments
 ```bash
-python main.py
+python zero_shot_detector.py --source 0  # Use webcam (default)
+python zero_shot_detector.py --source path/to/video.mp4  # Use video file
+python zero_shot_detector.py --no-jit  # Disable TorchScript acceleration
 ```
-
-### Video File
-```bash
-python main.py --source path/to/video.mp4
-```
-
-### Disable TorchScript Acceleration
-```bash
-python main.py --no-jit
-```
-
----
 
 ## ⌨️ Controls
 
