@@ -14,6 +14,7 @@ This project demonstrates real-time **zero-shot object detection** using the [OW
 - Display annotated video with bounding boxes, labels, and confidence scores.
 - Allow live updating of detection classes during runtime.
 - Log predictions for further analysis.
+- Video Recording: Save processed videos with detection overlays to file
 
 ---
 
