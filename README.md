@@ -40,7 +40,7 @@ cd DynamicZeroShotVision
 
 2. **Install dependencies**
 ```bash
-pip install -r requirements.txt
+pip install torch opencv-python transformers numpy pillow
 ```
 
 ---
