@@ -54,7 +54,8 @@ python main.py --source path/to/video.mp4  # Use video file
 python main.py --no-jit  # Disable TorchScript acceleration
 ```
 
-## ⌨️ Controls
+## ⌨️ Keyboard Controls
+While the application is running:
 
 - `q`: Quit the program
 - `c`: Change detection classes dynamically
