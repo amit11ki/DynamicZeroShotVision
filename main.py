@@ -12,8 +12,8 @@ from torch.jit import trace  # For model acceleration
 
 # ----------- Configuration -----------
 RESIZE_WIDTH, RESIZE_HEIGHT = 320, 320  # Resize dimensions for frames
-CONFIDENCE_THRESHOLD = 0.04  # Minimum confidence for valid detection
-DEFAULT_CLASSES = ["lightbulb", "matchstick", "monitor", "lion", "gaming console"]
+CONFIDENCE_THRESHOLD = 0.05  # Minimum confidence for valid detection
+DEFAULT_CLASSES = ["a lightbulb", "a matchstick", "a monitor", "a lion", "a peacock"]
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"  # Use GPU if available
 LOG_FILE = "detections_log.json"
 WINDOW_NAME = "Zero-Shot Object Detection"
